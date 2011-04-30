@@ -132,8 +132,8 @@ static RKObjectManager* sharedManager = nil;
 
 #pragma mark Object Loading
 
-- (void)registerClass:(Class<RKObjectMappable>)class forElementNamed:(NSString*)elementName {
-	[_mapper registerClass:class forElementNamed:elementName];
+- (void)registerClass:(Class<RKObjectMappable>)class forElementNamed:(NSString*)elementNameOrKeyPath {
+	[_mapper registerClass:class forElementNamed:elementNameOrKeyPath];
 }
 
 - (RKObjectLoader*)objectLoaderWithResourcePath:(NSString*)resourcePath delegate:(NSObject<RKObjectLoaderDelegate>*)delegate {
@@ -162,7 +162,7 @@ static RKObjectManager* sharedManager = nil;
 }
 
 - (RKObjectLoader*)loadObjectsAtResourcePath:(NSString *)resourcePath queryParams:(NSDictionary*)queryParams delegate:(NSObject <RKObjectLoaderDelegate>*)delegate {
-	NSString* resourcePathWithQuery = [self.client resourcePath:resourcePath withQueryParams:queryParams];
+	NSString* resourcePathWithQuery = RKPathAppendQueryParams(resourcePath, queryParams);
 	RKObjectLoader* loader = [self objectLoaderWithResourcePath:resourcePathWithQuery delegate:delegate];
 	loader.method = RKRequestMethodGET;
 
@@ -182,7 +182,7 @@ static RKObjectManager* sharedManager = nil;
 }
 
 - (RKObjectLoader*)loadObjectsAtResourcePath:(NSString *)resourcePath queryParams:(NSDictionary*)queryParams objectClass:(Class<RKObjectMappable>)objectClass delegate:(NSObject <RKObjectLoaderDelegate>*)delegate {
-	NSString* resourcePathWithQuery = [self.client resourcePath:resourcePath withQueryParams:queryParams];
+	NSString* resourcePathWithQuery = RKPathAppendQueryParams(resourcePath, queryParams);
 	RKObjectLoader* loader = [self objectLoaderWithResourcePath:resourcePathWithQuery delegate:delegate];
 	loader.method = RKRequestMethodGET;
 	loader.objectClass = objectClass;

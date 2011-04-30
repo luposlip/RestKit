@@ -17,6 +17,8 @@
 @property (nonatomic, readonly) RKClient* client;
 @property (nonatomic, readonly) RKObjectMapper* objectMapper;
 
+- (void)prepareURLRequest;
+
 @end
 
 @implementation RKObjectLoader
@@ -68,22 +70,13 @@
 	NSDate* receivedAt = [NSDate date];
 	if (successful) {
 		_isLoaded = YES;
-		NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[self HTTPMethod], @"HTTPMethod",
-								  [self URL], @"URL",
-								  receivedAt, @"receivedAt",
-								  nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:RKResponseReceivedNotification
 															object:_response
-														  userInfo:userInfo];
+														  userInfo:nil];
 	} else {
-		NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[self HTTPMethod], @"HTTPMethod",
-								  [self URL], @"URL",
-								  receivedAt, @"receivedAt",
-								  error, @"error",
-								  nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:RKRequestFailedWithErrorNotification
 															object:self
-														  userInfo:userInfo];
+														  userInfo:nil];
 	}
 }
 
@@ -154,10 +147,10 @@
 	 */
 	NSArray* results = nil;
 	if (self.targetObject) {
-        [self.objectMapper mapObject:self.targetObject fromString:[response bodyAsString]];
+		[self.objectMapper mapObject:self.targetObject fromString:[response bodyAsString] keyPath:self.keyPath];
         results = [NSArray arrayWithObject:self.targetObject];
 	} else {
-		id result = [self.objectMapper mapFromString:[response bodyAsString] toClass:self.objectClass keyPath:_keyPath];
+		id result = [self.objectMapper mapFromString:[response bodyAsString] toClass:self.objectClass keyPath:self.keyPath];
 		if ([result isKindOfClass:[NSArray class]]) {
 			results = (NSArray*)result;
 		} else {
@@ -171,6 +164,21 @@
     [self performSelectorOnMainThread:@selector(informDelegateOfObjectLoadWithInfoDictionary:) withObject:infoDictionary waitUntilDone:YES];
 
 	[pool drain];
+}
+
+// Give the target object a chance to modify the request
+- (void)handleTargetObject {
+	if (self.targetObject) {
+		if ([self.targetObject respondsToSelector:@selector(willSendWithObjectLoader:)]) {
+			[self.targetObject willSendWithObjectLoader:self];
+		}
+	}
+}
+
+// Invoked just before request hits the network
+- (void)prepareURLRequest {
+    [self handleTargetObject];
+    [super prepareURLRequest];
 }
 
 - (void)didFailLoadWithError:(NSError*)error {
