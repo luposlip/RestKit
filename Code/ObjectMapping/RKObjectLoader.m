@@ -67,7 +67,6 @@
 - (void)responseProcessingSuccessful:(BOOL)successful withError:(NSError*)error {
 	_isLoading = NO;
 
-	NSDate* receivedAt = [NSDate date];
 	if (successful) {
 		_isLoaded = YES;
 		[[NSNotificationCenter defaultCenter] postNotificationName:RKResponseReceivedNotification
@@ -178,7 +177,7 @@
 // Invoked just before request hits the network
 - (void)prepareURLRequest {
     [self handleTargetObject];
-    [super prepareURLRequest];
+    [self prepareURLRequest];
 }
 
 - (void)didFailLoadWithError:(NSError*)error {
