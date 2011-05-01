@@ -7,6 +7,7 @@
 //
 
 #import "RKSpecEnvironment.h"
+#import "RKJSONParser.h"
 
 NSString* RKSpecGetBaseURL() {
     char* ipAddress = getenv("RESTKIT_IP_ADDRESS");
@@ -23,4 +24,23 @@ void RKSpecStubNetworkAvailability(BOOL isNetworkAvailable) {
         id mockClient = [OCMockObject partialMockForObject:client];
         [[[mockClient stub] andReturnValue:OCMOCK_VALUE(isNetworkAvailable)] isNetworkAvailable];
     }
+}
+
+// Read a fixture from the app bundle
+NSString* RKSpecReadFixture(NSString* fileName) {
+    NSError* error = nil;
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+	NSString* fixtureData = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
+    if (fixtureData == nil && error) {
+        [NSException raise:nil format:@"Failed to read contents of fixture '%@'. Did you add it to the app bundle? Error: %@", fileName, [error localizedDescription]];
+    }
+	return fixtureData;
+}
+
+id RKSpecParseFixtureJSON(NSString* fileName) {
+    NSString* JSON = RKSpecReadFixture(fileName);
+    RKJSONParser* parser = [RKJSONParser new];    
+    id result = [parser objectFromString:JSON];
+    [parser release];
+    return result;
 }

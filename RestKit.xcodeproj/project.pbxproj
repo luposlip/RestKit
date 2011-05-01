@@ -149,6 +149,15 @@
 		2590E8601252515400531FA8 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2590E85B1252515400531FA8 /* GHNSBundle+Utils.m */; };
 		2590E8611252515400531FA8 /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 2590E85D1252515400531FA8 /* GTMBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2590E8621252515400531FA8 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2590E85E1252515400531FA8 /* GTMBase64.m */; };
+		25952DEA136C8F3500D04F93 /* RKObjectMappingOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 25952DE8136C8F3500D04F93 /* RKObjectMappingOperation.h */; };
+		25952DEB136C8F3500D04F93 /* RKObjectMappingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25952DE9136C8F3500D04F93 /* RKObjectMappingOperation.m */; };
+		25952DF0136C8F9C00D04F93 /* RKObjectMappingOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 25952DEF136C8F9C00D04F93 /* RKObjectMappingOperationSpec.m */; };
+		25952DF5136C8FD500D04F93 /* RKObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 25952DF3136C8FD500D04F93 /* RKObjectMapping.h */; };
+		25952DF6136C8FD500D04F93 /* RKObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 25952DF4136C8FD500D04F93 /* RKObjectMapping.m */; };
+		25952DF9136C9E7C00D04F93 /* RKObjectElementMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 25952DF7136C9E7C00D04F93 /* RKObjectElementMapping.h */; };
+		25952DFA136C9E7C00D04F93 /* RKObjectElementMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 25952DF8136C9E7C00D04F93 /* RKObjectElementMapping.m */; };
+		25952E02136CA34500D04F93 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 25952E00136CA34500D04F93 /* user.json */; };
+		25952E03136CA34500D04F93 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 25952E01136CA34500D04F93 /* users.json */; };
 		259562E4126D3B36004BAC4C /* RKDynamicRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 259562E2126D3B36004BAC4C /* RKDynamicRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		259562E5126D3B36004BAC4C /* RKDynamicRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 259562E3126D3B36004BAC4C /* RKDynamicRouter.m */; };
 		259562E8126D3B43004BAC4C /* RKRailsRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 259562E6126D3B43004BAC4C /* RKRailsRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -462,6 +471,16 @@
 		2590E85B1252515400531FA8 /* GHNSBundle+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSBundle+Utils.m"; sourceTree = "<group>"; };
 		2590E85D1252515400531FA8 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		2590E85E1252515400531FA8 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		25952DE8136C8F3500D04F93 /* RKObjectMappingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectMappingOperation.h; sourceTree = "<group>"; };
+		25952DE9136C8F3500D04F93 /* RKObjectMappingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectMappingOperation.m; sourceTree = "<group>"; };
+		25952DEE136C8F9C00D04F93 /* RKObjectMappingOperationSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectMappingOperationSpec.h; sourceTree = "<group>"; };
+		25952DEF136C8F9C00D04F93 /* RKObjectMappingOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectMappingOperationSpec.m; sourceTree = "<group>"; };
+		25952DF3136C8FD500D04F93 /* RKObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectMapping.h; sourceTree = "<group>"; };
+		25952DF4136C8FD500D04F93 /* RKObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectMapping.m; sourceTree = "<group>"; };
+		25952DF7136C9E7C00D04F93 /* RKObjectElementMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectElementMapping.h; sourceTree = "<group>"; };
+		25952DF8136C9E7C00D04F93 /* RKObjectElementMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectElementMapping.m; sourceTree = "<group>"; };
+		25952E00136CA34500D04F93 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.json; sourceTree = "<group>"; };
+		25952E01136CA34500D04F93 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.json; sourceTree = "<group>"; };
 		259562E2126D3B36004BAC4C /* RKDynamicRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDynamicRouter.h; sourceTree = "<group>"; };
 		259562E3126D3B36004BAC4C /* RKDynamicRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDynamicRouter.m; sourceTree = "<group>"; };
 		259562E6126D3B43004BAC4C /* RKRailsRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKRailsRouter.h; sourceTree = "<group>"; };
@@ -762,6 +781,12 @@
 				259562E6126D3B43004BAC4C /* RKRailsRouter.h */,
 				259562E7126D3B43004BAC4C /* RKRailsRouter.m */,
 				253E1B1012E9450700F3E4B0 /* RKObjectMappable.m */,
+				25952DE8136C8F3500D04F93 /* RKObjectMappingOperation.h */,
+				25952DE9136C8F3500D04F93 /* RKObjectMappingOperation.m */,
+				25952DF3136C8FD500D04F93 /* RKObjectMapping.h */,
+				25952DF4136C8FD500D04F93 /* RKObjectMapping.m */,
+				25952DF7136C9E7C00D04F93 /* RKObjectElementMapping.h */,
+				25952DF8136C9E7C00D04F93 /* RKObjectElementMapping.m */,
 			);
 			path = ObjectMapping;
 			sourceTree = "<group>";
@@ -979,6 +1004,24 @@
 			path = GTM;
 			sourceTree = "<group>";
 		};
+		25952DFB136CA23D00D04F93 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				25952DFF136CA34500D04F93 /* JSON */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		25952DFF136CA34500D04F93 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				25952E00136CA34500D04F93 /* user.json */,
+				25952E01136CA34500D04F93 /* users.json */,
+			);
+			name = JSON;
+			path = Fixtures/JSON;
+			sourceTree = "<group>";
+		};
 		259D510D1328547000897272 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1055,8 @@
 				259D51191328547000897272 /* RKRailsRouterSpec.m */,
 				25D1983F1368A9CE0090B617 /* RKObjectLoaderSpec.m */,
 				25D1994D136BE7E00090B617 /* RKObjectMappingNextGenSpec.m */,
+				25952DEE136C8F9C00D04F93 /* RKObjectMappingOperationSpec.h */,
+				25952DEF136C8F9C00D04F93 /* RKObjectMappingOperationSpec.m */,
 			);
 			path = ObjectMapping;
 			sourceTree = "<group>";
@@ -1079,6 +1124,7 @@
 		3F6C3A9210FE750E008F47C5 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				25952DFB136CA23D00D04F93 /* Fixtures */,
 				259D510D1328547000897272 /* CoreData */,
 				259D510F1328547000897272 /* Network */,
 				259D51141328547000897272 /* ObjectMapping */,
@@ -1146,6 +1192,9 @@
 				253A09E612552B5300976E89 /* ObjectMapping.h in Headers */,
 				259562E4126D3B36004BAC4C /* RKDynamicRouter.h in Headers */,
 				259562E8126D3B43004BAC4C /* RKRailsRouter.h in Headers */,
+				25952DEA136C8F3500D04F93 /* RKObjectMappingOperation.h in Headers */,
+				25952DF5136C8FD500D04F93 /* RKObjectMapping.h in Headers */,
+				25952DF9136C9E7C00D04F93 /* RKObjectElementMapping.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1503,6 +1552,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CAF335135DCB0500F53AF5 /* blake.png in Resources */,
+				25952E02136CA34500D04F93 /* user.json in Resources */,
+				25952E03136CA34500D04F93 /* users.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1609,6 +1660,9 @@
 				259562E5126D3B36004BAC4C /* RKDynamicRouter.m in Sources */,
 				259562E9126D3B43004BAC4C /* RKRailsRouter.m in Sources */,
 				253E1B1112E9450700F3E4B0 /* RKObjectMappable.m in Sources */,
+				25952DEB136C8F3500D04F93 /* RKObjectMappingOperation.m in Sources */,
+				25952DF6136C8FD500D04F93 /* RKObjectMapping.m in Sources */,
+				25952DFA136C9E7C00D04F93 /* RKObjectElementMapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1711,6 +1765,7 @@
 				25D198401368A9CE0090B617 /* RKObjectLoaderSpec.m in Sources */,
 				25D1984313697FEF0090B617 /* RKManagedObjectLoaderSpec.m in Sources */,
 				25D1994E136BE7E00090B617 /* RKObjectMappingNextGenSpec.m in Sources */,
+				25952DF0136C8F9C00D04F93 /* RKObjectMappingOperationSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
