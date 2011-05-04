@@ -101,7 +101,9 @@
     }
     
 	// By default return a form encoded serializable dictionary
-	return [object propertiesForSerialization];
+	// return [object propertiesForSerialization];
+	// Changed to return JSON serialized output for "real" RESTful services use
+	return [RKJSONSerialization JSONSerializationWithObject:[object propertiesForSerialization]];
 }
 
 @end
