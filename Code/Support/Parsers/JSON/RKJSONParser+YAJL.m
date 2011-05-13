@@ -16,7 +16,10 @@
 }
 
 - (NSString*)stringFromObject:(id)object {
-	return [object yajl_JSONString];
+	// Supporting NSDate
+    return [object
+            yajl_JSONStringWithOptions:YAJLGenOptionsIncludeUnsupportedTypes
+            indentString: nil];
 }
 
 @end
